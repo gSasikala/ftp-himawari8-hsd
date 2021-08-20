@@ -51,15 +51,15 @@ ex:</br>
 
     Enter download file path : D:\ftp_test </br>
 
-This will download the AHI Himawari8 full-disk satellite image as *.dat file format zipped.
+This will download the AHI Himawari8 full-disk satellite image as *.dat file format zipped.</br>
 <strong> AHI Himawari8 Full Disk image from the data downloaded for Band 1 is show below </strong></br>
 <img src='earth_fldk.png' width="100%" height="100%"  />
 
-<h2> Open, Process, Crop, Save Satellite Imagery and generate Composites </h2>  
+<h3> Open, Process, Crop, Save Satellite Imagery and generate Composites </h3>  
 Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to open the downloaded files and make use of it.</br>
-<b> Note: </b> Download atleast 10 minutes (2:00 to 2:10pm) data of a date to work on this processing. </br>
+Download atleast 10 minutes (2:00 to 2:10pm) data of a date to work on this processing. </br>
 
-<h2>Composites</h2>
+<h3>Composites</h3>
 To generate Satpy Composites needs all bands B01-B16 for atleast 10 minutes timeframe of a date.
 </br>
   <img src='airmass.png' width="100%" height="100%" /></br>
