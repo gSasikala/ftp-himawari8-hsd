@@ -1,7 +1,6 @@
 # Python_JAXA_Himawari8_Imagery_Downloader
 Python script to ftp download of himawari8 realtime full disk satellite image files from JAXA server for the specified date range(Himawari standard data will be provided only for the latest 30 days).  </br> </br>
 
-<img src='/images/FullDisk_obsn_Area.png' /></br>
 <h2>Pre-requisites:</h2></br>
 <b>1. User Registration </b> </br>
 <ol>
@@ -54,7 +53,7 @@ ex:</br>
 
 This will download the AHI Himawari8 full-disk satellite image as *.dat file format zipped.
 <strong> AHI Himawari8 Full Disk image from the data downloaded for Band 1 is show below </strong></br>
-<img src='images/earth_fldk.png' width="800" height="800"  />
+<img src='earth_fldk.png' width="800" height="800"  />
 
 <h2> Open, Process, Crop, Save Satellite Imagery and generate Composites </h2>  
 Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to open the downloaded files and make use of it.</br>
@@ -63,7 +62,7 @@ Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to
 <h2>Composites</h2>
 To generate Satpy Composites needs all bands B01-B16 for atleast 10 minutes timeframe of a date.
 </br>
-  <img src='/images/airmass.png' width="800px" height="800px" /></br>
+  <img src='airmass.png' width="800px" height="800px" /></br>
  <br/>
 
 
