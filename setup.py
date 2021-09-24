@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ftp_himawari8_hsd",
-    version="1.0.0",
+    version="1.0.1",
     author="Sasikala Gnanamuthu",
     author_email="serskg@nus.edu.sg",
     description="Sateliite Imagery Download Package",
@@ -23,10 +23,6 @@ setuptools.setup(
         'pathlib==1.0.1',
         'regex==2020.11.13',
         'futures3==1.0.0',
-        'satpy==0.25.1',
-        'cartopy==0.17.0',
-        'matplotlib==3.3.4',
-        'pyproj==2.6.1',
         'pandas~=1.2.4'
     ],
     classifiers=(

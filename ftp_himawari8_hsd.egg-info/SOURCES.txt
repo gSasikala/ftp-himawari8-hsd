@@ -7,4 +7,5 @@ ftp_himawari8_hsd/ftp_himawari8_hsd.py
 ftp_himawari8_hsd.egg-info/PKG-INFO
 ftp_himawari8_hsd.egg-info/SOURCES.txt
 ftp_himawari8_hsd.egg-info/dependency_links.txt
+ftp_himawari8_hsd.egg-info/requires.txt
 ftp_himawari8_hsd.egg-info/top_level.txt
