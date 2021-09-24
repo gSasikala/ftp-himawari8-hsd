@@ -71,11 +71,9 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
         server = 'ftp.ptree.jaxa.jp'
         directory = 'jma/hsd/'
 
-        ptree_username = 'serskg_nus.edu.sg'
-        ptree_passcode = 'SP+wari8'
 
-        # ptree_username = input("Enter your JAXA p-Tree username: ")
-        # ptree_passcode = input("Enter your JAXA p-Tree password: ")
+        ptree_username = input("Enter your JAXA p-Tree username: ")
+        ptree_passcode = input("Enter your JAXA p-Tree password: ")
         print("Hello", ptree_username + "!")
 
         print("Connecting to JAXA p-Tree FTP server")
