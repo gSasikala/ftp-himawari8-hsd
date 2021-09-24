@@ -11,3 +11,4 @@ satpy==0.25.1
 cartopy==0.17.0
 matplotlib==3.3.4
 pyproj==2.6.1 (Try to install like this 'conda install -c conda-forge pyproj')
+pandas~=1.2.4

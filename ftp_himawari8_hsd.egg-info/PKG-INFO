@@ -1,12 +1,27 @@
+Metadata-Version: 2.1
+Name: ftp-himawari8-hsd
+Version: 1.0.8
+Summary: Sateliite Imagery Download Package
+Home-page: https://github.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader.git
+Author: Sasikala Gnanamuthu
+Author-email: serskg@nus.edu.sg
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
 # Python_JAXA_Himawari8_Imagery_Downloader
 Python script to ftp download of himawari8 realtime full disk satellite image files from JAXA server for the specified date range(Himawari standard data will be provided only for the latest 30 days).  </br> </br>
 
 <h2>Pre-requisites:</h2></br>
 <b>1. User Registration </b> </br>
 <ol>
-  <li> Make an User Account request for the data use of JAXA’s p-Tree system: </br>
+  <li> Make an User Account request for the data use of JAXAâ€™s p-Tree system: </br>
       
-          a. Apply for a user account by clicking the ’user registration’ button on top of the website https://www.eorc.jaxa.jp/ptree/index_j.html.  </br>
+          a. Apply for a user account by clicking the â€™user registrationâ€™ button on top of the website https://www.eorc.jaxa.jp/ptree/index_j.html.  </br>
           b. Enter the user information according the procedure described. Application acceptance email will be sent from the P-Tree secretariat. </br>
           c. Download the python package from my repository.  git clone https://github.com/gSasikala/Python_JAXA_ftp_himawari8.git </br>
           d. pip install ftp-himawari8-hsd  </br>
@@ -63,6 +78,8 @@ To generate Satpy Composites needs all bands B01-B16 for atleast 10 minutes time
 </br>
   <img src='https://raw.githubusercontent.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader/main/airmass.png' width="100%" height="100%" /></br>
 <br/>
+
+
 
 
 
