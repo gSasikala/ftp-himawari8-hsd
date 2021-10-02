@@ -24,17 +24,20 @@ def help():
     start date or time, end date or time are mandatorily required.
     yyyy: year (4 digits), mm : month (2 digits), dd : day(2 digits)
 
-    python ftp_himawari7_hsd.py
+    python ftp_himawari8_hsd.py
     this script can accept date/month without leading zeros
-    usage 1: download for a range of dates only
-        Enter start datetime yyyy/mm/dd hh:mm: 2021/07/20
-        Enter end datetime yyyy/mm/dd hh:mm : 2021/07/22
-    usage 2: download for given time range of current date
-    Enter start datetime yyyy/mm/dd hh:mm: 01:00
-    Enter end datetime yyyy/mm/dd hh:mm : 01:10
-    usage 3: download for given range of timestamps
-        Enter start datetime yyyy/mm/dd hh:mm: 2021/7/20 12:00
-        Enter end datetime yyyy/mm/dd hh:mm : 2021/7/22 12:20
+    usage 1: download for given range of dates 
+           Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 
+           Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 
+           Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''. 
+    usage 2: download for given time range of current date 
+           Enter start datetime yyyy/mm/dd hh:mm: 01:00 
+           Enter end datetime yyyy/mm/dd hh:mm : 01:20 
+           Output file timestamps are current day's ``01:00'', ``01:10'' and ``01:20''. 
+    usage 3: download for given range of timestamps 
+           Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00 
+           Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 
+           Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''.
 
     Enter download file path : D:\ftp_test
 
@@ -58,43 +61,7 @@ def help():
     when a file is downloaded its size is also displayed to the user along with the filename."""
     print(help)
 
-# How to execute this ftp_himawari8_hsd.py
-# open python terminal and navigate to the folder where this python file is located.
-# run below command in terminal to execute this script
 
-# Follow the below format for user inputs as follows
-# start date or time, end date or time are mandatorily required.
-# yyyy: year (4 digits), mm : month (2 digits), dd : day(2 digits)
-
-# python ftp_himawari7_hsd.py
-# this script can accept date/month without leading zeros
-# usage 1: download for a range of dates only
-#    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/20
-#    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/22
-# usage 2: download for given time range of current date
-#    Enter start datetime yyyy/mm/dd hh:mm: 01:00
-#    Enter end datetime yyyy/mm/dd hh:mm : 01:10
-# usage 3: download for given range of timestamps
-#    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/20 12:00
-#    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/22 12:20
-
-#   Enter download file path : D:\ftp_test
-
-# To stop execution: Press cntrl + C
-
-# about downloadfiles function
-# helps user to download the geostationary satellite Himawari Standard Data
-# provided by the Japan Meteorological Agency (JMA) as well as the geophysical parameter data
-# produced by JAXA using the Himawari Standard Data via FTP
-# JAXA p-Tree FTP server only allows to download: before 30 days from current date
-
-# User Inputs:
-# download_path: local computer or server file path to store the downloaded satellite image data files
-# start_date or time, end_date or time are mandatorily required from user.
-
-# for a day(24 hrs) JAXA server provides approximately 22,720 files in zipped format(*.bz2).
-# bz2 file size can be more than 50MB also
-# when a file is downloaded its size is also displayed to the user along with the filename.
 
 def downloadfiles(download_path: Path, start_date: str, end_date: str):
     try:
