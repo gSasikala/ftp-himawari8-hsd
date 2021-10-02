@@ -42,6 +42,12 @@ Execute python script ftp_himawari8_hsd.py. Input start date and end date, downl
 <strong><i> python ftp_himawari8_hsd.py </i></strong> </br>
 ex:</br>
 <b> > python ftp_himawari8_hsd.py </b> </br>
+    Enter start datetime yyyy/mm/dd hh:mm: 20210725 00:00 </br>
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 </br>
+    Enter download file path : D:\ftp_test </br>
+    Enter your JAXA p-Tree username: test_123 </br>
+    Enter your JAXA p-Tree password: test_123 </br>
+    
 # usage 1: download for given range of dates </br>
 #   Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 </br>
     Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 </br>
@@ -55,9 +61,9 @@ ex:</br>
     Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 </br>
     Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </br>
     
-    Enter download file path : D:\ftp_test </br>
     
-    Enter your username and password: test_123
+    
+   
 
 This will download the AHI Himawari8 full-disk satellite image as *.dat file format zipped.</br>
 <i> AHI Himawari8 Full Disk image for Band 1 </i></br>
