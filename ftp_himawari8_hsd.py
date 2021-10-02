@@ -19,13 +19,13 @@ from datetime import datetime,time, timedelta
 # How to execute this ftp_himawari8_hsd.py
 # open python terminal and navigate to the folder where this python file is located.
 # run below command in terminal to execute this script
+# python ftp_himawari8_hsd.py
 
 # Follow the below format for user inputs as follows
 # start date or time, end date or time are mandatorily required.
+# this script can accept date/month without leading zeros
 # yyyy: year (4 digits), mm : month (2 digits), dd : day(2 digits)
 
-# python ftp_himawari8_hsd.py
-# this script can accept date/month without leading zeros
 # usage 1: download for given range of dates 
 #          Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 
 #          Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 
@@ -38,10 +38,6 @@ from datetime import datetime,time, timedelta
 #          Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00 
 #          Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 
 #          Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''.
-
-#   Enter download file path : D:\ftp_test
-
-#   Enter username and password: test_1234
 
 # To stop execution: Press cntrl + C
 
