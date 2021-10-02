@@ -53,9 +53,9 @@ ex:</br>
       
       Enter your JAXA p-Tree password: test_123 
 
-Example usage of download period
-# usage 1: download for given range of dates </h3></br>
-#   Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 </br>
+Examples of download period
+ usage 1: download for given range of dates </br>
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 </br>
     Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 </br>
     Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </br>
  usage 2: download for given time range of current date </br>
