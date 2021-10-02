@@ -60,7 +60,23 @@ from datetime import datetime,time, timedelta
 # when a file is downloaded its size is also displayed to the user along with the filename.
 
 def downloadfiles(download_path: Path, start_date: str, end_date: str):
-	
+    """
+    Save specified time range files to specified file folder.
+       
+    Parameters
+    ----------
+    download_path : Path
+                 A file folder to save downloaded files
+    start_date : str
+              Start date time for downloaed files
+    end_date : str
+            End date time for downloaed files
+               
+    Returns
+    -------
+    Himawari Standard Data in DAT format
+
+    """	
     try:
         #format user input to date format
         sdate = dateparser.parse(start_date)
