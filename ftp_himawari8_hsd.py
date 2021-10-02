@@ -24,19 +24,24 @@ from datetime import datetime,time, timedelta
 # start date or time, end date or time are mandatorily required.
 # yyyy: year (4 digits), mm : month (2 digits), dd : day(2 digits)
 
-# python ftp_himawari7_hsd.py
+# python ftp_himawari8_hsd.py
 # this script can accept date/month without leading zeros
-# usage 1: download for a range of dates only
-#    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/20
-#    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/22
-# usage 2: download for given time range of current date
-#    Enter start datetime yyyy/mm/dd hh:mm: 01:00
-#    Enter end datetime yyyy/mm/dd hh:mm : 01:10
-# usage 3: download for given range of timestamps
-#    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/20 12:00
-#    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/22 12:20
+# usage 1: download for given range of dates 
+#          Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 
+#          Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 
+#          Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''. 
+# usage 2: download for given time range of current date 
+#          Enter start datetime yyyy/mm/dd hh:mm: 01:00 
+#          Enter end datetime yyyy/mm/dd hh:mm : 01:20 
+#          Output file timestamps are current day's ``01:00'', ``01:10'' and ``01:20''. 
+# usage 3: download for given range of timestamps 
+#          Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00 
+#          Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 
+#          Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''.
 
 #   Enter download file path : D:\ftp_test
+
+#   Enter username and password: test_1234
 
 # To stop execution: Press cntrl + C
 
@@ -55,6 +60,7 @@ from datetime import datetime,time, timedelta
 # when a file is downloaded its size is also displayed to the user along with the filename.
 
 def downloadfiles(download_path: Path, start_date: str, end_date: str):
+	
     try:
         #format user input to date format
         sdate = dateparser.parse(start_date)
