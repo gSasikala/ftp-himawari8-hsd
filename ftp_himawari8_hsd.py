@@ -77,7 +77,8 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
         #format user input to date format
         sdate = dateparser.parse(start_date)
         edate = dateparser.parse(end_date)
-
+	
+        #check date validity
         if (edate < sdate) or (sdate > datetime.now()):
             print('Please enter valid date range...')
             sys.exit()
@@ -91,21 +92,21 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
         #access to JAXA p-Tree FTP site
         server = 'ftp.ptree.jaxa.jp'
         directory = 'jma/hsd/'
-
-        ptree_username ='serskg_nus.edu.sg'
-        ptree_passcode ='SP+wari8'
-
-        #ptree_username = input("Enter your JAXA p-Tree username: ")
-        #ptree_passcode = input("Enter your JAXA p-Tree password: ")
-        print("Hello", ptree_username + "!")
-
+        
+	#ask for input: ptree username and password 
+        ptree_username = input("Enter your JAXA p-Tree username: ")
+        ptree_passcode = input("Enter your JAXA p-Tree password: ")
+        
+	#print current processing step 
+	print("Hello", ptree_username + "!")
         print("Connecting to JAXA p-Tree FTP server")
-        ftp = ftplib.FTP(server)
 
         #specify the login user credentials provided by JAXA's p-Tree system
+	ftp = ftplib.FTP(server)
         ftp.login(ptree_username, ptree_passcode)
         logging.info('Login successful')
 
+	#print current processing step 
         print("Changing to directory: {}".format(directory))
         ftp.cwd(directory)
 
@@ -154,7 +155,7 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
         # Step 5: Filter only AHI full disk data files
         df_filelist = df_filelist.loc[(df_filelist['ftp_file_path'].str.contains('_FLDK_'))]
         df_filelist = df_filelist.loc[(df_filelist['ftp_file_path'].str.contains('.bz2'))]
-
+        #check date validity
         if len(df_filelist)>0:
             filelist = list(df_filelist['ftp_file_path'])
             print("Total files downloadable: "+ str(len(filelist)))
@@ -201,6 +202,7 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
             sys.exit()
 
 def main():
+    """Execute the download."""
     start_date=input("Enter start datetime yyyy/mm/dd hh:mm: ")
     print(start_date)
 
@@ -210,7 +212,7 @@ def main():
     download_path=input("Enter download file path : ")
     print(download_path)
 
-	# executes calls asynchronously. For windows max_workers must be less than or equal to 61.
+    # executes calls asynchronously. For windows max_workers must be less than or equal to 61.
     with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
         futures = {executor.submit(downloadfiles(download_path,start_date,end_date))}
         for fut in concurrent.futures.as_completed(futures):
