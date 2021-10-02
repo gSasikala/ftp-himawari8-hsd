@@ -18,7 +18,7 @@ Python script to ftp download of himawari8 real-time full disk satellite image f
     </li>
 </ol>
 <b>Python Dependencies:</b></br>
-ftp_himawari8_hsd.py depends on the python packages as listed in requirements.txt file of this repository. </br> </br>
+   ftp_himawari8_hsd.py depends on the python packages as listed in requirements.txt file of this repository. </br> </br>
 <!-- How to do: Open python terminal and key in as follows</br> 
       pip install argparse==1.4.0 </br> Press Enter Key </br> 
       This will install the package to your work environment. Do the same for remaining packages.</br>
@@ -39,40 +39,36 @@ ftp_himawari8_hsd.py depends on the python packages as listed in requirements.tx
 <h2>Usage</h2>  
 <h3>Downloading Satellite Imagery from JAXA server</h3></br> 
 Execute python script ftp_himawari8_hsd.py. Input start date and end date, download file path, JAXA username and password. </br>
-<strong><i> python ftp_himawari8_hsd.py </i></strong> </br>
-ex:</br>
-<b> > python ftp_himawari8_hsd.py </b> </br>
+example:</br>
+<b> > <strong><i> python ftp_himawari8_hsd.py </i></strong> </b> </br>
       
-      Enter start datetime yyyy/mm/dd hh:mm: 20210725 00:00 
-      
-      Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 
-      
-      Enter download file path : D:\ftp_test 
-      
-      Enter your JAXA p-Tree username: test_123 
-      
-      Enter your JAXA p-Tree password: test_123 
+    Enter start datetime yyyy/mm/dd hh:mm: 20210725 00:00 
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50      
+    Enter download file path : D:\ftp_test     
+    Enter your JAXA p-Tree username: test_123    
+    Enter your JAXA p-Tree password: test_123 
+This will download the AHI Himawari8 full-disk satellite image as *.dat file format zipped.</br>
 
 Examples of download period
- usage 1: download for given range of dates </br>
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 </br>
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 </br>
-    Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </br>
- usage 2: download for given time range of current date </br>
-    Enter start datetime yyyy/mm/dd hh:mm: 01:00 </br>
-    Enter end datetime yyyy/mm/dd hh:mm : 01:20 </br>
-    Output file timestamps are current day's "01:00", "01:10" and "01:20".
- usage 3: download for given range of timestamps </br>
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00 </br>
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 </br>
-    Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </br>
-    
-    
-    
-   
 
-This will download the AHI Himawari8 full-disk satellite image as *.dat file format zipped.</br>
-<i> AHI Himawari8 Full Disk image for Band 1 </i></br>
+<ol> 
+  <li> download for given range of dates. Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </li>
+    
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25
+
+  <li> download for given time range of current date. Output file timestamps are current day's "01:00", "01:10" and "01:20".</li>
+  
+    Enter start datetime yyyy/mm/dd hh:mm: 01:00 
+    Enter end datetime yyyy/mm/dd hh:mm : 01:20     
+  
+  <li> download for given range of timestamps. Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50".</li>
+  
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50         
+</ol>
+  
+<h3>AHI Himawari8 Full Disk image for Band 1 </h3></br>
 <img src='earth_fldk.png' width="100%" height="100%"  />
 <h3> Open, Process, Crop, Save Satellite Imagery and generate Composites </h3>  
 Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to open the downloaded files and make use of it.</br>
