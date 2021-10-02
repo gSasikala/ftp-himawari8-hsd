@@ -32,20 +32,23 @@ ftp_himawari8_hsd depends on the python packages as listed in requirements.txt f
     
 <h2>Usage</h2>  
 <h3>Downloading Satellite Imagery from JAXA server</h3></br> 
-Execute python ftp_himawari8_hsd.download() with parameters download file path, start date and end date. </br>
-<strong><i> ftp_himawari_hsd.download() </i></strong> </br>
+Execute python script ftp_himawari8_hsd.py with parameters download file path, start date and end date. </br>
+<strong><i> python ftp_himawari8_hsd.py </i></strong> </br>
 ex:</br>
-<b> > ftp_himawari_hsd.download() </b> </br>
+<b> > python ftp_himawari8_hsd.py </b> </br>
  usage 1: download for given range of dates </br>
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/20 </br>
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/22 </br>
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 </br>
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 </br>
+    Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''.
  usage 2: download for given time range of current date </br>
     Enter start datetime yyyy/mm/dd hh:mm: 01:00 </br>
-    Enter end datetime yyyy/mm/dd hh:mm : 01:10 </br>
+    Enter end datetime yyyy/mm/dd hh:mm : 01:20 </br>
+    Output file timestamps are current day's ``01:00'', ``01:10'' and ``01:20''.
  usage 3: download for given range of timestamps </br>
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/20 12:00 </br>
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/22 12:20 </br>
-
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00 </br>
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 </br>
+    Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''.
+    
     Enter download file path : D:\ftp_test </br>
 
     Enter your username and password: test_123
