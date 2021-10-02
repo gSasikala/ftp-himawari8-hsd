@@ -14,10 +14,10 @@ Python script to ftp download of himawari8 real-time full disk satellite image f
 <ol>
   <li> Install Anaconda framework(Opensource) from website  https://www.anaconda.com/products/individual to your local machine.</li>
   <li> Install Python(version >= 3.7) from website https://www.python.org/downloads/</li>  
-  <li> After successfully installing Python, Create virtual or conda environment and install the following python dependencies as listed below  </br>
+  <li> After successfully installing Python, Create virtual or conda environment and install the following python dependencies as listed in requirements.txt  </br>
     </li>
 </ol>
-<b>Python Dependencies:</b> </br>
+<b>Python Dependencies:</b></br>
 ftp_himawari8_hsd.py depends on the python packages as listed in requirements.txt file of this repository. </br> </br>
 <!-- How to do: Open python terminal and key in as follows</br> 
       pip install argparse==1.4.0 </br> Press Enter Key </br> 
