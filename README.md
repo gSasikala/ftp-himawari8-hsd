@@ -57,6 +57,8 @@ ex:</br>
     Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''.
     
     Enter download file path : D:\ftp_test </br>
+    
+    Enter your username and password: test_123
 
 This will download the AHI Himawari8 full-disk satellite image as *.dat file format zipped.</br>
 <i> AHI Himawari8 Full Disk image for Band 1 </i></br>
