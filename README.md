@@ -45,7 +45,7 @@ ex:</br>
  usage 1: download for given range of dates </br>
     Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 </br>
     Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 </br>
-    Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50".
+    Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </br>
  usage 2: download for given time range of current date </br>
     Enter start datetime yyyy/mm/dd hh:mm: 01:00 </br>
     Enter end datetime yyyy/mm/dd hh:mm : 01:20 </br>
@@ -53,7 +53,7 @@ ex:</br>
  usage 3: download for given range of timestamps </br>
     Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00 </br>
     Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 </br>
-    Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50".
+    Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </br>
     
     Enter download file path : D:\ftp_test </br>
     
