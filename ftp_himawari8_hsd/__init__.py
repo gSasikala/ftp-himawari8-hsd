@@ -23,10 +23,9 @@ def help():
 
     Follow the below format for user inputs as follows
     start date or time, end date or time are mandatorily required.
+    this script can accept date/month without leading zeros
     yyyy: year (4 digits), mm : month (2 digits), dd : day(2 digits)
 
-    python ftp_himawari8_hsd.py
-    this script can accept date/month without leading zeros
     usage 1: download for given range of dates 
            Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 
            Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 
@@ -39,10 +38,6 @@ def help():
            Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00 
            Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 
            Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''.
-
-    Enter download file path : D:\ftp_test
-
-    Enter username and password: test_123
 
     To stop execution: Press cntrl + C
 
@@ -86,6 +81,7 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
         sdate = dateparser.parse(start_date)
         edate = dateparser.parse(end_date)
 
+        # check date validity
         if (edate < sdate) or (sdate > datetime.now()):
             print('Please enter valid date range...')
             sys.exit()
@@ -100,20 +96,20 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
         server = 'ftp.ptree.jaxa.jp'
         directory = 'jma/hsd/'
 
-        # ptree_username = username 
-        # ptree_passcode = password 
-
+        # ask for input: ptree username and password 
         ptree_username = input("Enter your JAXA p-Tree username: ")
         ptree_passcode = input("Enter your JAXA p-Tree password: ")
+        
+        # print current processing step
         print("Hello", ptree_username + "!")
-
         print("Connecting to JAXA p-Tree FTP server")
-        ftp = ftplib.FTP(server)
-
+        
         # specify the login user credentials provided by JAXA's p-Tree system
+        ftp = ftplib.FTP(server)
         ftp.login(ptree_username, ptree_passcode)
         logging.info('Login successful')
 
+        # print current processing step
         print("Changing to directory: {}".format(directory))
         ftp.cwd(directory)
 
@@ -162,7 +158,8 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
         # Step 5: Filter only AHI full disk data files
         df_filelist = df_filelist.loc[(df_filelist['ftp_file_path'].str.contains('_FLDK_'))]
         df_filelist = df_filelist.loc[(df_filelist['ftp_file_path'].str.contains('.bz2'))]
-
+        
+        #check date validity
         if len(df_filelist) > 0:
             filelist = list(df_filelist['ftp_file_path'])
             print("Total files downloadable: " + str(len(filelist)))
