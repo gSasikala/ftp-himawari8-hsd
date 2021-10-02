@@ -69,18 +69,15 @@ Examples of download period
 </li></ol>
   
 <h3>How to use downloaded Satellite Imagery</h3></br>
-Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to open the downloaded files and make use of it.</br>
+Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to open the downloaded files and make use of it. Detailed usage include but not limited to open, process, crop, save Satellite Imagery and generate Composites. </br>
 Download atleast 10 minutes (e.g. 2:00 to 2:10) data of a date to work on this processing. </br>
 
-AHI Himawari8 Full Disk image for Band 1 
-<img src='earth_fldk.png' width="100%" height="100%"  />
-<h3> Open, Process, Crop, Save Satellite Imagery and generate Composites </h3>  
-Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to open the downloaded files and make use of it.</br>
-Download atleast 10 minutes (2:00 to 2:10pm) data of a date to work on this processing. </br>
-<h3>Composites</h3>
-To generate Satpy Composites needs all bands B01-B16 for atleast 10 minutes timeframe of a date.
-</br>
-  <img src='airmass.png' width="100%" height="100%" /></br>
+#### Example 1: AHI Himawari8 Full Disk image for Band 1 
+<img src='earth_fldk.png' width="100%" height="80%" />
+
+
+#### Example 2: Generate composite "airmass". To generate Satpy Composites needs all bands B01-B16 for at least 10 minutes timeframe of a date.
+<img src='airmass.png' width="100%" height="100%" /></br>
 
 
 
