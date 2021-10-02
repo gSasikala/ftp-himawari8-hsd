@@ -14,6 +14,7 @@ from pandas.core.common import flatten
 
 
 def help():
+    """Help documentation."""
     help="""How to execute this ftp_himawari8_hsd
     Open python terminal 
 
@@ -64,6 +65,22 @@ def help():
 
 
 def downloadfiles(download_path: Path, start_date: str, end_date: str):
+    """
+    Save specified time range files to specified file folder.
+       
+    Parameters
+    ----------
+    download_path : Path
+                 A file folder to save downloaded files
+    start_date : str
+              Start date time for downloaed files
+    end_date : str
+            End date time for downloaed files
+               
+    Returns
+    -------
+    Himawari Standard Data in DAT format
+    """
     try:
         # format user input to date format
         sdate = dateparser.parse(start_date)
@@ -197,6 +214,7 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
 
 
 def download():
+    """Eexcute the download."""
     start_date = input("Enter start datetime yyyy/mm/dd hh:mm: ")
     print(start_date)
 
