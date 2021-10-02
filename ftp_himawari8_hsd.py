@@ -155,6 +155,7 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
         # Step 5: Filter only AHI full disk data files
         df_filelist = df_filelist.loc[(df_filelist['ftp_file_path'].str.contains('_FLDK_'))]
         df_filelist = df_filelist.loc[(df_filelist['ftp_file_path'].str.contains('.bz2'))]
+	
         #check date validity
         if len(df_filelist)>0:
             filelist = list(df_filelist['ftp_file_path'])
@@ -178,7 +179,8 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
 
                 # Check if file is not yet downloaded(file in *.bz2 format)
                 # or partial downloading state(file in *.dat format).
-                if (os.path.exists(os.path.join(download_path, fileName+".DAT")))==False: # This avoids repeated downloading of same file from JAXA ftp server
+                if (os.path.exists(os.path.join(download_path, fileName+".DAT")))==False: 
+			# This avoids repeated downloading of same file from JAXA ftp server
 
                     srcfile = wget.download(fileurl, out=download_path) # download file *.bz2
                     outfile_path = os.path.join(download_path, downloadfilename[3].split('.bz2')[0])
@@ -219,4 +221,5 @@ def main():
             print(fut.result())
             logging.info(fut.result())
 
+# function call
 main()
