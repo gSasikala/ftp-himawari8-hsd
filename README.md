@@ -1,5 +1,5 @@
 # Python_JAXA_Himawari8_Imagery_Downloader
-Python script to ftp download of himawari8 realtime full disk satellite image files from JAXA server for the specified date range(Himawari standard data will be provided only for the latest 30 days).  </br> </br>
+Python script to ftp download of himawari8 real-time full disk satellite image files from JAXA server for the specified date range(Himawari standard data will be provided only for the latest 30 days).  </br> </br>
 
 <h2>Pre-requisites:</h2></br>
 <b>1. User Registration </b> </br>
@@ -8,9 +8,8 @@ Python script to ftp download of himawari8 realtime full disk satellite image fi
       
           a. Apply for a user account by clicking the ’user registration’ button on top of the website https://www.eorc.jaxa.jp/ptree/index_j.html.  </br>
           b. Enter the user information according the procedure described. Application acceptance email will be sent from the P-Tree secretariat. </br>
-          c. Download the python package from my repository.  git clone https://github.com/gSasikala/Python_JAXA_ftp_himawari8.git </br>
+          c. Download the python package from my repository.  git clone https://github.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader.git </br>
           d. Open the python script 'ftp_himawari8_hsd.py' in your preferred editor.</br>
-          e. Navigate to line number 32 and 33 and provide the JAXA p-Tree login username and password for successful download of Full-Disk Advanced Himawari8 Images for free.  </br>
   </li></ol>
 <b>Software needed</b></br>
 <ol>
@@ -31,7 +30,12 @@ ftp_himawari8_hsd.py depends on the python packages as listed in requirements.tx
       pip install python-dateutil==2.8.1 </br>
       pip install pathlib==1.0.1  </br>
       pip install regex==2020.11.13  </br>
-      pip install futures3==1.0.0 </br> -->
+      pip install futures3==1.0.0 </br>
+      pip install pandas==1.3.3 </br>
+      pip install satpy==0.25.1 </br>
+      pip install cartopy==0.17.0 </br>
+      pip install matplotlib==3.3.4 </br>
+      pip install pyproj==2.6.1 </br> -->
     
 <h2>Usage</h2>  
 <h3>Downloading Satellite Imagery from JAXA server</h3></br> 
@@ -40,15 +44,18 @@ Execute python script ftp_himawari8_hsd.py with parameters download file path, s
 ex:</br>
 <b> > python ftp_himawari_hsd.py </b> </br>
  usage 1: download for given range of dates </br>
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/20 </br>
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/22 </br>
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 </br>
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 </br>
+    Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''.
  usage 2: download for given time range of current date </br>
     Enter start datetime yyyy/mm/dd hh:mm: 01:00 </br>
-    Enter end datetime yyyy/mm/dd hh:mm : 01:10 </br>
+    Enter end datetime yyyy/mm/dd hh:mm : 01:20 </br>
+    Output file timestamps are current day's ``01:00'', ``01:10'' and ``01:20''.
  usage 3: download for given range of timestamps </br>
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/20 12:00 </br>
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/22 12:20 </br>
-
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00 </br>
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 </br>
+    Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''.
+    
     Enter download file path : D:\ftp_test </br>
 
 This will download the AHI Himawari8 full-disk satellite image as *.dat file format zipped.</br>
