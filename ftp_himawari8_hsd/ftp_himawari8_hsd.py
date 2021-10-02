@@ -200,7 +200,7 @@ def downloadfiles(download_path: Path, start_date: str, end_date: str):
 
 
 def download():
-    """Execute downloading."""
+    """Execute the download."""
     start_date = input("Enter start datetime yyyy/mm/dd hh:mm: ")
     print(start_date)
 
