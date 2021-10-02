@@ -47,7 +47,7 @@ example:</br>
     Enter download file path : D:\ftp_test     
     Enter your JAXA p-Tree username: test_123    
     Enter your JAXA p-Tree password: test_123 
-This will download the AHI Himawari8 full-disk satellite image as *.dat file format zipped.</br>
+This will download the full-disk Himawari8 Standard Data as zipped files (*.bz2) and then automatically unzipped (*.DAT).The general HSD file name format is: HS\_aaa\_yyyymmdd\_hhnn\_Bbb\_FLDK\_Rjj\_Skkll.DAT. Letters indicate different information. "HS" means Himawari Standard Data. "aaa" means satellite name and can be H08 (Himawari-8) or H09(Himawati-9). "hhnn" indicates hour and minute (every 10 minute). "bb" indicates band number from 01 to 16. "FLDK" means full-disk. "jj" indicates the spatial resolution in which 05 means 0.5 km, 10 means 1 km and 20 means 2 km."kkll" indicates information on the segment division of HSD. "kk" means segment number from 01 to ll. "ll" means total number of segments ranges between 01 and 99. </br>
 
 Examples of download period
 
@@ -66,9 +66,13 @@ Examples of download period
   
     Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00
     Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50         
-</ol>
+</li></ol>
   
-<h3>AHI Himawari8 Full Disk image for Band 1 </h3></br>
+<h3>How to use downloaded Satellite Imagery</h3></br>
+Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to open the downloaded files and make use of it.</br>
+Download atleast 10 minutes (e.g. 2:00 to 2:10) data of a date to work on this processing. </br>
+
+AHI Himawari8 Full Disk image for Band 1 
 <img src='earth_fldk.png' width="100%" height="100%"  />
 <h3> Open, Process, Crop, Save Satellite Imagery and generate Composites </h3>  
 Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to open the downloaded files and make use of it.</br>
@@ -77,7 +81,7 @@ Download atleast 10 minutes (2:00 to 2:10pm) data of a date to work on this proc
 To generate Satpy Composites needs all bands B01-B16 for atleast 10 minutes timeframe of a date.
 </br>
   <img src='airmass.png' width="100%" height="100%" /></br>
- <br/>
+
 
 
 
