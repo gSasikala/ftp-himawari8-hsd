@@ -43,15 +43,15 @@ Execute python script ftp_himawari8_hsd.py. Input start date and end date, downl
 ex:</br>
 <b> > python ftp_himawari8_hsd.py </b> </br>
       
-      Enter start datetime yyyy/mm/dd hh:mm: 20210725 00:00 </br>
+      Enter start datetime yyyy/mm/dd hh:mm: 20210725 00:00 
       
-      Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 </br>
+      Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50 
       
-      Enter download file path : D:\ftp_test </br>
+      Enter download file path : D:\ftp_test 
       
-      Enter your JAXA p-Tree username: test_123 </br>
+      Enter your JAXA p-Tree username: test_123 
       
-      Enter your JAXA p-Tree password: test_123 </br>
+      Enter your JAXA p-Tree password: test_123 
 
 Example usage of download period
 # usage 1: download for given range of dates </h3></br>
