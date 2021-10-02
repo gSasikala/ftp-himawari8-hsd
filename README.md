@@ -2,7 +2,7 @@
 Python script to ftp download of himawari8 real-time full disk satellite image files from JAXA server for the specified date range(Himawari standard data will be provided only for the latest 30 days).  </br> </br>
 
 <h2>Pre-requisites:</h2></br>
-<b>1. User Registration </b></br>
+<b>User Registration </b></br>
 <ol>
   <li> Make an User Account request for the data use of JAXA’s p-Tree system: </br>
           a. Apply for a user account by clicking the ’user registration’ button on top of the website https://www.eorc.jaxa.jp/ptree/index_j.html.  </br>
