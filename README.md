@@ -38,7 +38,7 @@ ftp_himawari8_hsd depends on the python packages as listed in requirements.txt f
     
 <h2>Usage</h2>  
 <h3>Downloading Satellite Imagery from JAXA server</h3></br> 
-Execute python script ftp_himawari8_hsd.py. Input start date and end date, download file path, JAXA username and password. </br>
+Execute ftp_himawari8_hsd.download() . Input start date and end date, download file path, JAXA username and password. </br>
 example:</br>
 <b> > <strong><i> ftp_himawari8_hsd.download() </i></strong> </b> </br>
       
@@ -73,10 +73,10 @@ Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to
 Download atleast 10 minutes (e.g. 2:00 to 2:10) data of a date to work on this processing. </br>
 
 #### Example 1: AHI Himawari8 Full Disk image for Band 1 
-<img src='earth_fldk.png' width="100%" height="80%" />
+<img src='https://raw.githubusercontent.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader/pypi/earth_fldk.png' width="100%" height="80%" />
 
 #### Example 2: Generate composite "airmass". To generate Satpy Composites needs all bands B01-B16 for at least 10 minutes timeframe of a date.
-<img src='airmass.png' width="100%" height="100%" /></br>
+<img src='https://raw.githubusercontent.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader/pypi/airmass.png' width="100%" height="100%" /></br>
 
 
 
