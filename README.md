@@ -1,5 +1,5 @@
 # Python_JAXA_Himawari8_Imagery_Downloader
-Python script to ftp download of himawari8 real-time full disk satellite image files from JAXA server for the specified date range(Himawari standard data will be provided only for the latest 30 days).  </br> </br>
+Python package to ftp download of himawari8 real-time full disk satellite image files from JAXA server for the specified date range(Himawari standard data will be provided only for the latest 30 days).  </br> </br>
 
 <h2>Pre-requisites:</h2></br>
 <b>User Registration </b> </br>
@@ -52,20 +52,20 @@ This will download the full-disk Himawari8 Standard Data as zipped files (*.bz2)
 Examples of download period
 
 <ol> 
-  <li> download for given range of dates. Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </li>
-    
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25
+  <li> download for given range of timestamps. Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50".</li>
+  
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 00:00
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 23:50    
 
   <li> download for given time range of current date. Output file timestamps are current day's "01:00", "01:10" and "01:20".</li>
   
     Enter start datetime yyyy/mm/dd hh:mm: 01:00 
     Enter end datetime yyyy/mm/dd hh:mm : 01:20     
   
-  <li> download for given range of timestamps. Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50".</li>
-  
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 00:00
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 23:50         
+  <li> download for given range of dates. Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </li>
+    
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25       
 </li></ol>
 
 You can also use ftp_himawari8_hsd.help() to get help on the console</br>
