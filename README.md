@@ -42,8 +42,8 @@ Execute ftp_himawari8_hsd.download() . Input start date and end date, download f
 example:</br>
 <b> > <strong><i> ftp_himawari8_hsd.download() </i></strong> </b> </br>
       
-    Enter start datetime yyyy/mm/dd hh:mm: 20210725 00:00 
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50      
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 00:00 
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 23:50      
     Enter download file path : D:\ftp_test     
     Enter your JAXA p-Tree username: test_123    
     Enter your JAXA p-Tree password: test_123 
@@ -54,8 +54,8 @@ Examples of download period
 <ol> 
   <li> download for given range of dates. Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </li>
     
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25
 
   <li> download for given time range of current date. Output file timestamps are current day's "01:00", "01:10" and "01:20".</li>
   
@@ -64,8 +64,8 @@ Examples of download period
   
   <li> download for given range of timestamps. Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50".</li>
   
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 00:00
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50         
+    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 00:00
+    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 23:50         
 </li></ol>
 
 You can also use ftp_himawari8_hsd.help() to get help on the console</br>
