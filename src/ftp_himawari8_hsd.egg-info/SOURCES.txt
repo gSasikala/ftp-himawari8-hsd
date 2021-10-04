@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+src/ftp_himawari8_hsd/__init__.py
+src/ftp_himawari8_hsd/ftp_himawari8_hsd.py
+src/ftp_himawari8_hsd.egg-info/PKG-INFO
+src/ftp_himawari8_hsd.egg-info/SOURCES.txt
+src/ftp_himawari8_hsd.egg-info/dependency_links.txt
+src/ftp_himawari8_hsd.egg-info/requires.txt
+src/ftp_himawari8_hsd.egg-info/top_level.txt

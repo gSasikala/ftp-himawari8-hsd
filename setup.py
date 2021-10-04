@@ -5,14 +5,15 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ftp_himawari8_hsd",
-    version="1.0.6",
+    version="1.0.8",
     author="Sasikala Gnanamuthu",
     author_email="serskg@nus.edu.sg",
     description="Sateliite Imagery Download Package",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    package_dir={"": "src"},
     url="https://github.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader.git",
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(where="src"),
     install_requires=[
         'argparse==1.4.0',
         'dateparser==1.0.0',
