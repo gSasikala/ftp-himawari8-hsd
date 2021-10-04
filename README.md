@@ -1,5 +1,5 @@
 # Python_JAXA_Himawari8_Imagery_Downloader
-Python script to ftp download of himawari8 realtime full disk satellite image files from JAXA server for the specified date range(Himawari standard data will be provided only for the latest 30 days).  </br> </br>
+Python script to ftp download of himawari8 real-time full disk satellite image files from JAXA server for the specified date range(Himawari standard data will be provided only for the latest 30 days).  </br> </br>
 
 <h2>Pre-requisites:</h2></br>
 <b>User Registration </b> </br>
@@ -14,7 +14,7 @@ Python script to ftp download of himawari8 realtime full disk satellite image fi
 <ol>
   <li> Install Anaconda framework(Opensource) from website  https://www.anaconda.com/products/individual to your local machine.</li>
   <li> Install Python(version >= 3.7) from website https://www.python.org/downloads/</li>  
-  <li> After successfully installing Python, Create virtual or conda environment and install the following python dependencies as listed below  </br>
+  <li> After successfully installing Python, Create virtual or conda environment and install the following python dependencies as listed in requirements.txt  </br>
     </li>
 </ol>
 <b>Python Dependencies:</b> </br>
