@@ -72,6 +72,8 @@ Examples of download period
 Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to open the downloaded files and make use of it. Detailed usage include but not limited to open, process, crop, save Satellite Imagery and generate Composites. </br>
 Download atleast 10 minutes (e.g. 2:00 to 2:10) data of a date to work on this processing. </br>
 
+You can also use ftp_himawari8_hsd.help() to get help on the console
+
 #### Example 1: AHI Himawari8 Full Disk image for Band 1 
 <img src='https://raw.githubusercontent.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader/pypi/earth_fldk.png' width="100%" height="80%" />
 
