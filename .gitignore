@@ -1,5 +1,5 @@
 *.log	
-.idea/
-build/
-dist/
-ftp_himawari8_hsd.egg-info/
+.idea/*
+build/*
+dist/*
+ftp_himawari8_hsd.egg-info/* 
