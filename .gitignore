@@ -2,4 +2,5 @@
 .idea/*
 build/*
 dist/*
+src/ftp_himawari8_hsd.egg-info/*
 ftp_himawari8_hsd.egg-info/* 
