@@ -77,10 +77,10 @@ Download atleast 10 minutes (e.g. 2:00 to 2:10) data of a date to work on this p
 
 
 #### Example 1: AHI Himawari8 Full Disk image for Band 1 
-<img src='https://raw.githubusercontent.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader/pypi/earth_fldk.png' width="100%" height="80%" />
+<img src='https://raw.githubusercontent.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader/main/images/earth_fldk.png' width="100%" height="80%" />
 
 #### Example 2: Generate composite "airmass". To generate Satpy Composites needs all bands B01-B16 for at least 10 minutes timeframe of a date.
-<img src='https://raw.githubusercontent.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader/pypi/airmass.png' width="100%" height="100%" /></br>
+<img src='https://raw.githubusercontent.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader/main/images/airmass.png' width="100%" height="100%" /></br>
 
 
 
