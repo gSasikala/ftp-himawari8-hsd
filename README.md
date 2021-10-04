@@ -4,11 +4,11 @@ Python script to ftp download of himawari8 real-time full disk satellite image f
 <h2>Pre-requisites:</h2></br>
 <b>User Registration </b> </br>
 <ol>
-   Make an User Account request for the data use of JAXA p-Tree system: </br>
-          a. Apply for a user account by clicking the user registration button on top of the website https://www.eorc.jaxa.jp/ptree/index_j.html.  </br>
-          b. Enter the user information according the procedure described. Application acceptance email will be sent from the P-Tree secretariat.</br>
-          c. Download the python package from pip.</br>
-          d. pip install ftp-himawari8-hsd 
+   Make an User Account request for the data use of JAXA p-Tree system: </br></li>
+         <li> Apply for a user account by clicking the user registration button on top of the website https://www.eorc.jaxa.jp/ptree/index_j.html.  </br></li>
+         <li> Enter the user information according the procedure described. Application acceptance email will be sent from the P-Tree secretariat.</br></li>
+         <li> Download the python package from pip.</br>
+         <li> pip install ftp-himawari8-hsd </br>
 </li></ol>
 <b>Software needed</b></br>
 <ol>
