@@ -40,7 +40,7 @@ ftp_himawari8_hsd depends on the python packages as listed in requirements.txt f
 <h3>Downloading Satellite Imagery from JAXA server</h3></br> 
 Execute python script ftp_himawari8_hsd.py. Input start date and end date, download file path, JAXA username and password. </br>
 example:</br>
-<b> > <strong><i> python ftp_himawari8_hsd.py </i></strong> </b> </br>
+<b> > <strong><i> ftp_himawari8_hsd.download() </i></strong> </b> </br>
       
     Enter start datetime yyyy/mm/dd hh:mm: 20210725 00:00 
     Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 23:50      
