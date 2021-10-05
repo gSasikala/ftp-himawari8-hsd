@@ -127,16 +127,16 @@ class downloader:
             directory = 'jma/hsd/'
 
             # ask for input: ptree username and password 
-            ptree_username = input("Enter your JAXA p-Tree username: ")
-            ptree_passcode = input("Enter your JAXA p-Tree password: ")
+            #ptree_username = input("Enter your JAXA p-Tree username: ")
+            #ptree_passcode = input("Enter your JAXA p-Tree password: ")
             
             # print current processing step
-            print("Hello", ptree_username + "!")
+            print("Hello", self.username + "!")
             print("Connecting to JAXA p-Tree FTP server")
             
             # specify the login user credentials provided by JAXA's p-Tree system
             ftp = ftplib.FTP(server)
-            ftp.login(ptree_username, ptree_passcode)
+            ftp.login(self.username, self.password)
             logging.info('Login successful')
 
             # print current processing step
@@ -198,7 +198,7 @@ class downloader:
                 cnt = 0
                 for i in range(len(filelist)):
                     file = filelist[i]
-                    fileurl = 'ftp://' + ptree_username + ':' + ptree_passcode + '@ftp.ptree.jaxa.jp/jma/hsd/' + file
+                    fileurl = 'ftp://' + self.username + ':' + self.password + '@ftp.ptree.jaxa.jp/jma/hsd/' + file
 
                     downloadfilename = file.split('/')  # '202107/25/12/HS_H08_20210725_1250_B08_FLDK_R20_S0810.DAT.bz2'
                     fullfilename = downloadfilename[3].split('.')  # HS_H08_20210725_1250_B08_FLDK_R20_S0810.DAT.bz2
