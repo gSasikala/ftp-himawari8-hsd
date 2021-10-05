@@ -1,4 +1,4 @@
-# Python_JAXA_Himawari8_Imagery_Downloader
+# ftp-himawari8-hsd
 Python package to ftp download of himawari8 real-time full disk satellite image files from JAXA server for the specified date range(Himawari standard data will be provided only for the latest 30 days).  </br> </br>
 
 <h2>Pre-requisites:</h2></br>
