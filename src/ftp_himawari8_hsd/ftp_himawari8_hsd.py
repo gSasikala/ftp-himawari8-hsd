@@ -28,14 +28,13 @@ class downloader:
         self.MAX_WORKERS=4
         self.download_path="C:/ftp"
 
-    def help():
+    def help(self):
         """Help documentation."""
         help="""How to execute this ftp_himawari8_hsd
-        Open python terminal 
 
         import ftp_himawari8_hsd as ftp
         hsd=ftp.downloader()
-        hsd.start_date="2021/07/25 00:00"
+        hsd.start_date="2021/07/25 00:00" By default it will retrive the last 10 minutes files
         hsd.end_date="2021/07/25 00:00"
         hsd.username="foo" Enter your username here
         hsd.password="bar" Enter your password here
