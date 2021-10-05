@@ -49,6 +49,7 @@ class downloader:
         start date or time, end date or time are mandatorily required.
         this script can accept date/month without leading zeros
         yyyy: year (4 digits), mm : month (2 digits), dd : day(2 digits)
+        Time should be in UTC
 
         usage 1: download for given range of timestamps 
             Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 00:00 
@@ -103,7 +104,7 @@ class downloader:
         try:
             # format user input to date format
             if(self.start_date==None and self.end_date==None):
-                sdate=datetime.now(timezone.utc)-timedelta(minutes=20)
+                sdate=datetime.now(timezone.utc)-timedelta(minutes=15)
                 print(sdate)
                 edate=datetime.now(timezone.utc)
                 print(edate)
