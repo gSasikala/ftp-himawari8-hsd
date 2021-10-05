@@ -230,7 +230,7 @@ class downloader:
                     cnt += 1
                     print(str(cnt) + '. ' + str(file_name))
                 print(str(cnt) + ' files downloaded.')
-                logging.info(str(cnt) + ' Files downloaded for date range ' + self.start_date + ' to ' + self.end_date)
+                logging.info(str(cnt) + ' Files downloaded for date range ' + sdate + ' to ' + edate)
                 sys.exit()
             else:
                 print('No data files available at JAXA ftp server. Try another datetime range!')
