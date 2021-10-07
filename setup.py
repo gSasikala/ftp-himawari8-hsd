@@ -12,7 +12,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     package_dir={"": "src"},
-    url="https://github.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader.git",
+    url="https://github.com/gSasikala/ftp-himawari8-hsd.git",
     packages=setuptools.find_packages(where="src"),
     install_requires=[
         'argparse==1.4.0',
