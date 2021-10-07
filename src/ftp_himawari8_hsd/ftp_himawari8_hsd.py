@@ -36,7 +36,7 @@ class downloader:
 
         import ftp_himawari8_hsd as ftp
         hsd=ftp.downloader()
-        hsd.start_date="2021/07/25 00:00" By default it will retrive the last 10 minutes files
+        hsd.start_date="2021/07/25 00:00" By default it will retrieve the last 10 minutes files
         hsd.end_date="2021/07/25 00:00"
         hsd.username="foo" Enter your username here
         hsd.password="bar" Enter your password here
