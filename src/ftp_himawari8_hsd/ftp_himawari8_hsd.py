@@ -11,6 +11,8 @@ import dateparser
 import pandas as pd
 import wget
 from pandas.core.common import flatten
+import pytz
+
 
 class downloader:
 
@@ -109,8 +111,11 @@ class downloader:
                 edate=datetime.now(timezone.utc)
                 print(edate)
             else:
+                utc=pytz.UTC
                 sdate = dateparser.parse(self.start_date)
+                sdate=utc.localize(sdate)
                 edate = dateparser.parse(self.end_date)
+                edate=utc.localize(edate)
 
             #check date validity
             if (edate < sdate) or (sdate > datetime.now(timezone.utc)):
@@ -230,7 +235,7 @@ class downloader:
                     cnt += 1
                     print(str(cnt) + '. ' + str(file_name))
                 print(str(cnt) + ' files downloaded.')
-                logging.info(str(cnt) + ' Files downloaded for date range ' + sdate + ' to ' + edate)
+                logging.info(str(cnt) + ' Files downloaded for date range ' + str(sdate) + ' to ' + str(edate))
                 sys.exit()
             else:
                 print('No data files available at JAXA ftp server. Try another datetime range!')
