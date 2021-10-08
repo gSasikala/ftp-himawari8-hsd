@@ -15,20 +15,24 @@ import pytz
 
 
 class downloader:
-
+    """A class for downloading JAXA full-disk HSD"""
+    
+    # Introduce parameters
     start_date=None
     end_date=None
     password=None
     username=None
     MAX_WORKERS=None
     download_path=None
+    
     def __init__(self):
+        """Default values for parameters"""
         self.start_date=None
         self.end_date=None
         self.password=None
         self.username=None
         self.MAX_WORKERS=4
-        self.download_path="C:/ftp"
+        self.download_path=None
 
     def help(self):
         """Help documentation."""
@@ -247,8 +251,7 @@ class downloader:
 
 
     def download(self):
-        """Excute the download."""
-
+        """Excute the download in single thread."""
         # executes calls asynchronously. For windows max_workers must be less than or equal to 61.
         with concurrent.futures.ProcessPoolExecutor(max_workers=self.MAX_WORKERS) as executor:
             futures = {executor.submit(self.run())}
