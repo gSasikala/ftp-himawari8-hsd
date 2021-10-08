@@ -65,10 +65,8 @@ Date and Time should be in UTC
 </br>
   
 <h3>How to use downloaded Satellite Imagery</h3></br>
-Refer to 'Processing_Satellite_Imagery.ipynb' file of this repository for how to open the downloaded files and make use of it. Detailed usage include but not limited to open, process, crop, save Satellite Imagery and generate Composites. </br>
+Refer to 'Processing_Satellite_Imagery.ipynb' file of this Github repository \url{https://github.com/gSasikala/ftp-himawari8-hsd/tree/main/examples} for how to open the downloaded files and make use of it. Detailed usage include but not limited to open, process, crop, save Satellite Imagery and generate Composites. </br>
 Download atleast 10 minutes (e.g. 2:00 to 2:10) data of a date to work on this processing. </br>
-
-
 
 #### Example 1: AHI Himawari8 Full Disk image for Band 1 
 <img src='https://raw.githubusercontent.com/gSasikala/Python_JAXA_Himawari8_Imagery_Downloader/main/examples/earth_fldk.png' width="100%" height="80%" />
