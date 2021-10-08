@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ftp_himawari8_hsd",
-    version="1.1.3",
+    version="1.1.6",
     author="Sasikala Gnanamuthu",
     author_email="serskg@nus.edu.sg",
     description="Sateliite Imagery Download Package",
