@@ -15,7 +15,24 @@ import pytz
 
 
 class downloader:
-    """A class for downloading JAXA full-disk HSD"""
+    """
+    A class for downloading JAXA full-disk HSD
+    
+    Parameters
+    ----------
+    start_date : string, optional, start date time of target time range in UTC (Coordinated Universal Time, same as the 
+                JAXA P-Tree system); follows format ``yyyy/MM/dd hh:mm''. ``yyyy'', ``MM'', ``dd'', ``hh'' and ``mm'' 
+                denote year, month, day, hour and minute, respectively. ``MM'', ``dd'', ``hh'' and ``mm'' can work with
+                and without the leading zeros. Noted that HSD files are only available for the latest 30 days. Start 
+                time should be within the 30 days range. Default start time is 15 minutes from the present time. 
+    end_date : string, optional, end date time of target time range in UTC; follows format ``yyyy/MM/dd hh:mm''. Default
+              end time is the present time.
+    username : string, compulsory, username of JAXA P-Tree system.
+    password : string, compulsory, password of JAXA P-Tree system.
+    download_path : String & Path, compulsory, the location of downloaded HSD files.
+    MAX_WORKERS : integer, optional, number of threads used to parallel download data. Range from 1 to 61 for Windows. 
+                  Default max workers is 4. 
+    """
     
     # Introduce parameters
     start_date=None
@@ -92,16 +109,7 @@ class downloader:
 
     def run(self):
         """
-        Save specified time range files to specified file folder.
-        
-        Parameters
-        ----------
-        download_path : Path
-                    A file folder to save downloaded files
-        start_date : str
-                Start date time for downloaed files
-        end_date : str
-                End date time for downloaed files
+        Excute the download in mutiple threads.
                 
         Returns
         -------
@@ -251,7 +259,13 @@ class downloader:
 
 
     def download(self):
-        """Excute the download in single thread."""
+        """
+        Excute the download in single thread.
+        
+        Returns
+        -------
+        Himawari Standard Data in DAT format
+        """
         # executes calls asynchronously. For windows max_workers must be less than or equal to 61.
         with concurrent.futures.ProcessPoolExecutor(max_workers=self.MAX_WORKERS) as executor:
             futures = {executor.submit(self.run())}
