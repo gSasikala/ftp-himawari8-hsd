@@ -51,41 +51,48 @@ class downloader:
         self.MAX_WORKERS=4
         self.download_path=None
 
+        
     def help(self):
         """Help documentation."""
         help="""How to execute this ftp_himawari8_hsd
 
         import ftp_himawari8_hsd as ftp
         hsd=ftp.downloader()
-        hsd.start_date="2021/07/25 00:00" By default it will retrieve the last 10 minutes files
-        hsd.end_date="2021/07/25 00:00"
-        hsd.username="foo" Enter your username here
-        hsd.password="bar" Enter your password here
-        hsd.download_path="C:/ftp" Enter your download path here
-        hsd.MAX_WORKERS=8 Enter the number of workers to download here
+        # set following parameters
+        # Time range to download
+        # By default retrieves the last 15 minutes files
+        hsd.start_date = "yyyy/MM/dd hh:mm"
+        hsd.end_date = "yyyy/MM/dd hh:mm"
+        # P-Tree system user credentials
+        hsd.username = "USERNAME"
+        hsd.password = "PASSWORD"
+        # Download path to save data
+        hsd.download_path = "PATH"
+        # Choose the number of workers to download (1-MAX(CPU))
+        hsd.MAX_WORKERS = NUMBER
+        # Run ftp_himawari8_ftp.downloader
         hsd.run()
 
-        By default it will download files from the last 10 minutes. Necessary inputs are username and password.
+        By default it will download files from the last 15 minutes. Necessary inputs are username,
+        password and download path for the function to work.
 
-
-        Follow the below format for user inputs as follows
-        start date or time, end date or time are mandatorily required.
-        this script can accept date/month without leading zeros
+        Follow the below format for user inputs as follows.
+        this script can accept date/month without leading zeros.
         yyyy: year (4 digits), mm : month (2 digits), dd : day(2 digits)
         Time should be in UTC
 
-        usage 1: download for given range of timestamps 
-            Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 00:00 
-            Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 23:50 
-            Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''.
-        usage 2: download for given time range of current date 
-            Enter start datetime yyyy/mm/dd hh:mm: 01:00 
-            Enter end datetime yyyy/mm/dd hh:mm : 01:20 
-            Output file timestamps are current day's ``01:00'', ``01:10'' and ``01:20''. 
-        usage 3: download for given range of dates 
-            Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 
-            Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25 
-            Output file timestamps are every 10-minute timestamps from ``2021/07/25 00:00'' to ``2021/07/25 23:50''. 
+        1. "yyyy/MM/dd hh:mm".
+           For example, start date time is "2021/07/25 00:00" and end date time is "2021/07/25 23:50".
+           Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50".
+        2. "yyyy/MM/dd".
+           For example, start and end date time both are "2021/07/25". Output file timestamps are every 
+           10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50", same as the first way.
+        3. "hh:mm".
+           It only supports downloading data of current dat. For example, start date time is "01:00" and end 
+           date time is "01:20". Output file timestamps are current day's "01:00", "01:10" and "01:20".
+        4. No assigned download periods.
+           Default values are used for start date and end date. Output is the available HSD files in the past 
+           15 minutes.
 
         To stop execution: Press cntrl + C
 
@@ -95,16 +102,24 @@ class downloader:
         produced by JAXA using the Himawari Standard Data via FTP
         JAXA p-Tree FTP server only allows to download: before 30 days from current date
 
-        User Inputs:
-        download_path: local computer or server file path to store the downloaded satellite image data files
-        start_date or time, end_date or time are mandatorily required from user.
-        username and password are mandatorily required from user as well.
+        User Inputs parameters:
+            start_date : string, optional, start date time of target time range in UTC (Coordinated Universal Time, same as the 
+                         JAXA P-Tree system); follows format ``yyyy/MM/dd hh:mm''. ``yyyy'', ``MM'', ``dd'', ``hh'' and ``mm'' 
+                         denote year, month, day, hour and minute, respectively. ``MM'', ``dd'', ``hh'' and ``mm'' can work with
+                         and without the leading zeros. Noted that HSD files are only available for the latest 30 days. Start 
+                         time should be within the 30 days range. Default start time is 15 minutes from the present time. 
+            end_date : string, optional, end date time of target time range in UTC; follows format ``yyyy/MM/dd hh:mm''. Default
+                       end time is the present time.
+            username : string, compulsory, username of JAXA P-Tree system.
+            password : string, compulsory, password of JAXA P-Tree system.
+            download_path : String & Path, compulsory, the location of downloaded HSD files.
+            MAX_WORKERS : integer, optional, number of threads used to parallel download data. Range from 1 to 61 for Windows. 
+                           Default max workers is 4. 
 
         for a day(24 hrs) JAXA server provides approximately 22,720 files in zipped format(*.bz2).
         bz2 file size can be more than 50MB also
         when a file is downloaded its size is also displayed to the user along with the filename."""
         print(help)
-
 
 
     def run(self):
@@ -256,7 +271,7 @@ class downloader:
             logging.error('Error has occured !', ex)
             sys.exit()
 
-
+            
     def download(self):
         """
         Excute the download in single thread.
