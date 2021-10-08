@@ -29,7 +29,7 @@ Example:</br>
       
     import ftp_himawari8_hsd as ftp
     hsd=ftp.downloader()
-    hsd.start_date="2021/07/25 00:00" By default it will retrive the last 10 minutes files
+    hsd.start_date="2021/07/25 00:00" By default it will retrive the last 15 minutes files
     hsd.end_date="2021/07/25 00:00"
     hsd.username="foo" Enter your username here
     hsd.password="bar" Enter your password here
@@ -37,35 +37,33 @@ Example:</br>
     hsd.MAX_WORKERS=8 Enter the number of workers to download here
     hsd.run()
 
-    By default it will download files from the last 10 minutes. 
+    By default it will download files from the last 15 minutes. 
     Necessary inputs are username and password for the function to work
     You can use ftp.downloader().help() to get this information printed.
 
 This will download the full-disk Himawari8 Standard Data as zipped files (*.bz2) and then automatically unzipped (*.DAT).The general HSD file name format is: HS\_aaa\_yyyymmdd\_hhnn\_Bbb\_FLDK\_Rjj\_Skkll.DAT. Letters indicate different information. "HS" means Himawari Standard Data. "aaa" means satellite name and can be H08 (Himawari-8) or H09(Himawati-9). "hhnn" indicates hour and minute (every 10 minute). "bb" indicates band number from 01 to 16. "FLDK" means full-disk. "jj" indicates the spatial resolution in which 05 means 0.5 km, 10 means 1 km and 20 means 2 km."kkll" indicates information on the segment division of HSD. "kk" means segment number from 01 to ll. "ll" means total number of segments ranges between 01 and 99. </br>
 
-Examples of download period
-Date and Time should be in UTC
+This package supports four kinds of download periods.
+Date and Time should be in UTC.
 
 <ol> 
-  <li> download for given range of timestamps. Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50".</li>
-  
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/07/25 00:00
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/07/25 23:50    
+  <li> "yyyy/MM/dd hh:mm".</li>
+   For example, start date time is "2021/07/25 00:00" and end date time is "2021/07/25 23:50". Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50".
 
-  <li> download for given time range of current date. Output file timestamps are current day's "01:00", "01:10" and "01:20".</li>
+  <li> "yyyy/MM/dd".</li> 
+   For example, start and end date time both are "2021/07/25". Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50", same as the first way.    
   
-    Enter start datetime yyyy/mm/dd hh:mm: 01:00 
-    Enter end datetime yyyy/mm/dd hh:mm : 01:20     
-  
-  <li> download for given range of dates. Output file timestamps are every 10-minute timestamps from "2021/07/25 00:00" to "2021/07/25 23:50". </li>
-    
-    Enter start datetime yyyy/mm/dd hh:mm: 2021/7/25 
-    Enter end datetime yyyy/mm/dd hh:mm : 2021/7/25       
+  <li> "hh:mm". </li>
+    It only supports downloading data of current dat. For example, start date time is "01:00" and end date time is "01:20". Output file timestamps are current day's "01:00", "01:10" and "01:20". 
+   
+  <li>  No assigned download periods. </li>
+   Default values are used for start date and end date. Output is the available HSD files in the past 15 minutes.
+   
 </li></ol>
 </br>
   
 <h3>How to use downloaded Satellite Imagery</h3></br>
-Refer to 'Processing_Satellite_Imagery.ipynb' file of this Github repository \url{https://github.com/gSasikala/ftp-himawari8-hsd/tree/main/examples} for how to open the downloaded files and make use of it. Detailed usage include but not limited to open, process, crop, save Satellite Imagery and generate Composites. </br>
+Refer to 'Processing_Satellite_Imagery.ipynb' file of this Github repository at https://github.com/gSasikala/ftp-himawari8-hsd/tree/main/examples} for how to open the downloaded files and make use of it. Detailed usage include but not limited to open, process, crop, save Satellite Imagery and generate Composites. </br>
 Download atleast 10 minutes (e.g. 2:00 to 2:10) data of a date to work on this processing. </br>
 
 #### Example 1: AHI Himawari8 Full Disk image for Band 1 
