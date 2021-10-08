@@ -29,17 +29,26 @@ Example:</br>
       
     import ftp_himawari8_hsd as ftp
     hsd=ftp.downloader()
-    hsd.start_date="2021/07/25 00:00" By default it will retrive the last 15 minutes files
-    hsd.end_date="2021/07/25 00:00"
-    hsd.username="foo" Enter your username here
-    hsd.password="bar" Enter your password here
-    hsd.download_path="C:/ftp" Enter your download path here, by default it is C:/ftp
-    hsd.MAX_WORKERS=8 Enter the number of workers to download here
+    
+    # set following parameters
+    # Time range to download
+    # By default retrieves the last 15 minutes files
+    hsd.start_date = "2021/09/25 00:00"
+    hsd.end_date = "2021/09/25 00:20"
+    # P-Tree system user credentials
+    hsd.username = "USERNAME"
+    hsd.password = "PASSWORD"
+    # Download path to save data
+    hsd.download_path = "C:/ftp"
+    # Choose the number of workers to download (1-MAX(CPU))
+    hsd.MAX_WORKERS = 8
+
+    # Run ftp_himawari8_ftp.downloader
     hsd.run()
 
-    By default it will download files from the last 15 minutes. 
-    Necessary inputs are username and password for the function to work
-    You can use ftp.downloader().help() to get this information printed.
+  By default it will download files from the last 15 minutes. 
+  Necessary inputs are username,password and download path for the function to work
+  You can use ftp.downloader().help() to get this information printed.
 
 This will download the full-disk Himawari8 Standard Data as zipped files (*.bz2) and then automatically unzipped (*.DAT).The general HSD file name format is: HS\_aaa\_yyyymmdd\_hhnn\_Bbb\_FLDK\_Rjj\_Skkll.DAT. Letters indicate different information. "HS" means Himawari Standard Data. "aaa" means satellite name and can be H08 (Himawari-8) or H09(Himawati-9). "hhnn" indicates hour and minute (every 10 minute). "bb" indicates band number from 01 to 16. "FLDK" means full-disk. "jj" indicates the spatial resolution in which 05 means 0.5 km, 10 means 1 km and 20 means 2 km."kkll" indicates information on the segment division of HSD. "kk" means segment number from 01 to ll. "ll" means total number of segments ranges between 01 and 99. </br>
 
