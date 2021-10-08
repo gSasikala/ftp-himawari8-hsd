@@ -128,7 +128,10 @@ class downloader:
                 sdate=utc.localize(sdate)
                 edate = dateparser.parse(self.end_date)
                 edate=utc.localize(edate)
-
+                
+            if (self.download_path==None):
+               raise Exception("Please enter a download path")
+            
             #check date validity
             if (edate < sdate) or (sdate > datetime.now(timezone.utc)):
                 print('Please enter valid date range...')
@@ -143,10 +146,6 @@ class downloader:
             # access to JAXA p-Tree FTP site
             server = 'ftp.ptree.jaxa.jp'
             directory = 'jma/hsd/'
-
-            # ask for input: ptree username and password 
-            #ptree_username = input("Enter your JAXA p-Tree username: ")
-            #ptree_passcode = input("Enter your JAXA p-Tree password: ")
             
             # print current processing step
             print("Hello", self.username + "!")
@@ -177,7 +176,7 @@ class downloader:
             df_daywise = pd.DataFrame(sorted(list(flatten(daywise_list))), columns=['daywise'])
 
             # Step 2: Navigate to the date range folders of JAXA ftp filepath and extract files
-            print('2. Extracting 24-hrs data files for the date range. Please wait......')
+            print('2. Extracting data files for the date range. Please wait......')
             userdaterange_filelists = [ftp.nlst(fldr) for fldr in sorted(df_daywise['daywise'])]
 
             df_filelist = pd.DataFrame(sorted(list(flatten(userdaterange_filelists))),
