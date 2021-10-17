@@ -16,6 +16,9 @@ import pytz
 
 class downloader:
     """
+    author: Sasikala Gnanmuthu
+    co-autor: Nilesh zagade
+    
     A class for downloading JAXA full-disk HSD
     
     Parameters
